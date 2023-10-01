@@ -1,0 +1,51 @@
+import java.util.*;
+public class sort {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int [] arr=new int[5];
+        int s=0;
+        int e=arr.length-1;
+        int pos=-1,mid;
+        System.out.println("ENTER ARRAY ELEMENT :");
+        for(int i=0;i<arr.length;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<arr.length-1;i++){
+            int smallest =i;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[smallest]>arr[j]){
+                    smallest=j;
+                }
+            }
+            int temp=arr[smallest];
+            arr[smallest]=arr[i];
+            arr[i]=temp;
+        }
+        System.out.println("SORTED ARRAY IS :");
+        for(int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+        System.out.println("ENTER THE ELEMENT TO BE SEARCHED :");
+        int n=sc.nextInt();
+        while(s<=e){
+            mid=(s+e)/2;
+            if(n==arr[mid]){
+                    pos=mid;
+                    break;
+            }
+            else if(n<arr[mid]){
+                e=mid-1;
+            }
+            else{
+                s=mid+1;
+            }
+        }
+        if(pos==-1){
+            System.out.println("ELEMENT NOT FOUND ");
+        }
+        else{
+            System.out.println("ELEMENT IS FOUND AT " +(pos+1));
+        }
+
+            }
+        }
