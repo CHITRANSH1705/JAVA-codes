@@ -3,6 +3,7 @@ public class sort {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int [] arr=new int[5];
+        //Or you can take size of array from user also
         int s=0;
         int e=arr.length-1;
         int pos=-1,mid;
