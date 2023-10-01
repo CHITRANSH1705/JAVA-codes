@@ -1,0 +1,39 @@
+import java.util.*;
+public class selection {
+    public static void array(int arr[]){
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("ENTER SIZE ");
+        int n=sc.nextInt();
+        int []arr=new int[10];
+        System.out.print("ENTER ELEMENTS");
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.print("ARRAY ELEMENT ARE :");
+        for(int i=0;i<n;i++){
+            System.out.println((arr[i]));
+        }
+        for(int i=0;i<arr.length-1;i++){
+            int smallest =i;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[smallest]>arr[j]){
+                    smallest=j;
+                    int temp=arr[smallest];
+                    arr[smallest]=arr[i];
+                    arr[i]=temp;
+                }
+                
+            }
+        }
+        array(arr);
+        
+        }
+
+    }
+
